@@ -1,0 +1,223 @@
+
+
+
+.swiper {
+    width: 100%;
+    padding-top: 3.125rem;
+  }
+  
+  .swiper-pagination-bullet,
+  .swiper-pagination-bullet-active {
+    background: #fff;
+  }
+  
+  .swiper-pagination {
+    bottom: 1.25rem !important;
+  }
+  
+  .swiper-slide {
+    width: 18.75rem;
+    height: 28.125rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: self-start;
+  }
+  
+  .swiper-slide div {
+    display: none;
+    opacity: 0;
+    padding-bottom: 0.625rem;
+  }
+  
+  .swiper-slide-active div {
+    display: block;
+    opacity: 1;
+  }
+  
+  .swiper-slide--one {
+    border-radius: 30px;
+
+    background: url("../asset/events.jpg") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-slide--two {
+    border-radius: 30px;
+
+    background:  url("../asset/events.jpg") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-slide--three {
+    border-radius: 30px;
+
+    background: url("../asset/events.jpg") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-slide--four {
+    border-radius: 30px;
+
+    background: url("../asset/events.jpg") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-slide--five {
+  border-radius: 30px;
+    background:  url("../asset/events.jpg") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-3d .swiper-slide-shadow-left,
+  .swiper-3d .swiper-slide-shadow-right {
+    background-image: none;
+  }
+  
+  @media screen and (min-width: 48rem) {
+    main {
+      display: flex;
+      align-items: center;
+    }
+  
+    .bg,
+  .bg2 {
+      opacity: 0.1;
+    }
+  }
+  @media screen and (min-width: 93.75rem) {
+    .swiper {
+      width: 85%;
+    }
+  }
+
+
+  @keyframes bubble {
+    0%, 100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-bubble {
+    animation: bubble 2s ease-in-out infinite;
+}
+
+.navbar {
+  background-image: url('../asset/navbar.png');
+  background-size: cover;
+  background-position: center;
+  height: 58px;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  top: 0px;
+  width: 100%;
+}
+
+.top-left {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+ 
+}
+.logo {
+  width: 100px; 
+}
+
+a {
+  color: #ffffff; /* White color */
+  font-weight: bold; /* Bold font */
+  font-size: calc(1em ); /* Increase font size by 5 pixels */
+  text-decoration: none;
+  background-color: transparent;
+}
+   /* Mobile Navbar */
+   .navbar.mobile-open {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  /* Mobile Navigation Links */
+  .navbar.mobile-open .top-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Hide desktop navigation on mobile */
+  @media (max-width: 768px) {
+    .top-left {
+      display: none;
+    }
+  }
+.z-10 {
+  position: relative;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.modal {
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  z-index: 21;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.btn-close-modal {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Card hover effect */
+.z-10:hover .modal {
+  display: block;
+}
+
+/* Additional Card Styling */
+.btn-open-modal {
+  background-color: #3182ce;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Card colors */
+.bg-indigo-500 {
+  background-color: #6b46c1;
+}
+
+.bg-green-500 {
+  background-color: #48bb78;
+}
+
+.bg-blue-500 {
+  background-color: #4299e1;
+}

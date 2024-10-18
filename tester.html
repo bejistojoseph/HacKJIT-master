@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'>
+  <link rel="stylesheet" href="./styles/index.css">
+
+  <title>NFTS 2023 - IEEE </title>
+</head>
+
+<body>
+  <div id="root">
+    <div class="">
+      <div class="fixed inset-0 z-0">
+        <div class="relative w-full h-full overflow-hidden pointer-events-auto z-50">
+          <div class="w-full h-full">
+            <!-- Desktop Image -->
+            <img class="hidden sm:block w-full h-full" src="./asset/desktop.png" alt="Desktop Image Alt Text" />
+
+            <!-- Mobile Image -->
+            <img class="block sm:hidden w-full h-full" src="./asset/mobile.png" alt="Mobile Image Alt Text" />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="flex min-h-screen items-center justify-center bg-gray-900">
+        <div class="fixed left-0 right-0 top-0 z-20 h-14 border-b border-gray-700 bg-gray-900 bg-opacity-80 backdrop-blur-lg backdrop-filter">
+          <div class="flex justify-between items-center h-full px-4">
+            <!-- Logo Image -->
+            <a href="#" class="flex items-center text-gray-300 hover:text-indigo-500">
+                <img src="./asset/ieee1.png" class="w-16 h-8 ml-8" alt="">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3" href="./pages/Tracks.html">Tracks</a>
+                <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3"
+                    href="./pages/Sponsors.html">Sponsors</a>
+                <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3" href="./pages/Venue.html">Venue</a>
+                <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3"
+                    href="#Organizers">Admin</a>
+                <a class="cursor-pointer py-1 px-4 my-2 bg-purple-600 rounded-lg text-white text-center hover:rounded-xl"
+                    href="#">Registers</a>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden">
+                <button id="mobileNavButton" onclick="toggleMobileNav()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="h-7 w-7 text-white">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+      </div>
+
+      <div id="mobileNavModal"
+      class="hidden md:hidden fixed z-20 top-0 left-0 w-full h-full flex mx-auto items-center justify-center bg-black bg-opacity-70">
+      <div class=" rounded-lg p-6 space-y-10">
+          <a href="../index.html" class="flex items-center text-gray-300 hover:text-indigo-500" onclick="closeMobileNav()">
+              <img src="./asset/ieee1.png" class="w-20 h-10 " alt="" >
+          </a>
+          <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block text-2xl font-bold "
+              href="./pages/Tracks.html" onclick="closeMobileNav()">Tracks</a>
+          <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block  text-2xl font-bold"
+              href="./pages/Sponsors.html" onclick="closeMobileNav()">Sponsors</a>
+          <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block text-2xl font-bold "
+              href="./pages/Venue.html" onclick="closeMobileNav()">Venue</a>
+          <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block  text-2xl font-bold"
+              href="#" onclick="closeMobileNav()">Admin</a>
+          <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block  text-2xl font-bold" href="#"
+              onclick="closeMobileNav()">Registers</a>
+          <a class="cursor-pointer text-red-500 hover:text-red-500 block  text-2xl font-bold border border-red-500 text-center rounded-lg p-1"
+              onclick="closeMobileNav()">Close</a>
+
+      </div>
+  </div>
+      
+      <script>
+          const mobileNavModal = document.getElementById("mobileNavModal");
+      
+          function toggleMobileNav() {
+              mobileNavModal.classList.toggle("hidden");
+          }
+      
+          function closeMobileNav() {
+              mobileNavModal.classList.add("hidden");
+          }
+      </script>
+      
+      
+      <section id="Home" class="m-auto flex w-full flex-col justify-evenly px-0 xl:flex-row-reverse xl:justify-between xl:px-6">
+        <div class="flex w-full items-center justify-start">
+            <img class="z-10 m-auto h-[280px] w-auto md:h-[360px] xl:h-[500px]"
+                src="./asset/ieeebvm.png">
+        </div>
+        <div class="relative mx-auto w-full max-w-md space-y-0 py-20 xl:space-y-6">
+            <div class="text-white flex items-center justify-center space-y-4 text-2xl font-semibold">
+                JOIN THE IEEE NSFT 2023 EVENT
+            </div>
+            <div class="text-white flex items-center justify-center space-y-4 text-lg font-semibold">
+              National Symposium on Futuristic Technologies
+          </div>
+            <div class="text-white flex flex-row justify-center gap-1 text-4xl font-bold sm:text-7xl">
+                <div class="flex flex-col gap-2 text-center">
+                    <span>00</span><span class="text-sm lg:text-lg">Days</span>
+                </div><span>:</span>
+                <div class="flex flex-col gap-2 text-center">
+                    <span>00</span><span class="text-sm lg:text-lg">Hours</span>
+                </div><span>:</span>
+                <div class="flex flex-col gap-2 text-center">
+                    <span>00</span><span class="text-sm lg:text-lg">Minutes</span>
+                </div>
+            </div>
+            <div class="absolute flex w-full flex-col flex-wrap items-center justify-center gap-4 pt-10 text-sm sm:text-base">
+             
+              <!-- Contained Button with Hover Effect -->
+              <a href="#" target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex w-80 items-center justify-center gap-2 rounded-md bg-indigo-500 py-2.5 text-white hover:bg-indigo-600">
+                  <span>View Details</span>
+              </a>
+               <!-- Outlined Button -->
+               <a href="#" target="_blank"
+               rel="noopener noreferrer"
+               class="flex w-80 items-center justify-center gap-2 rounded-md border-2 border-indigo-500 py-2.5 text-white hover:bg-indigo-500 hover:text-white">
+               <span>Register Now</span>
+           </a>
+          </div>
+          
+        </div>
+    </section>
+    
+      </div>
+    
+
+      <section id="wiper" class="my-0 min-h-screen bg-gray-900 px-6 py-16 sm:px-20 sm:pt-14">
+        <div class="flex items-center justify-center ">
+          <span class="text-4xl font-semibold sm:text-5xl bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 bg-clip-text text-transparent">
+            11th - 13th November '22
+          </span>
+        </div>
+        
+        <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-slide--one">
+          </div>
+          <div class="swiper-slide swiper-slide--two">
+          </div>
+    
+          <div class="swiper-slide swiper-slide--three">
+    
+          </div>
+    
+          <div class="swiper-slide swiper-slide--four">
+
+          </div>
+    
+          <div class="swiper-slide swiper-slide--five">
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+      </section>
+      <section id="Tracks" class="my-0 min-h-screen bg-gray-900 px-6 py-16 sm:px-20 sm:pt-14">
+     
+        <div class="text-white  mb-20 text-center text-4xl font-semibold sm:text-5xl">Tracks</div>
+        <div class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div class="z-10 flex flex-col items-center justify-center space-y-3 rounded-sm border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 hover:shadow-lg"><div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-white"><path d="M19 6.844a2.007 2.007 0 0 1 1 1.752v6.555c0 .728 -.394 1.399 -1.03 1.753l-6 3.844a2 2 0 0 1 -1.942 0l-6 -3.844a2.007 2.007 0 0 1 -1.029 -1.752v-6.556c0 -.729 .394 -1.4 1.029 -1.753l6 -3.583a2.05 2.05 0 0 1 2 0l6 3.584h-.03z"></path><path d="M12 16.5v4.5"></path><path d="M4.5 7.5l3.5 2.5"></path><path d="M16 10l4 -2.5"></path><path d="M12 7.5v4.5l-4 2"></path><path d="M12 12l4 2"></path><path d="M12 16.5l4 -2.5v-4l-4 -2.5l-4 2.5v4z"></path></svg></div><h3 class="text-center text-xl font-semibold text-white">Experience</h3><p class="text-center text-gray-300">Participating in a hackathon offers an opportunity to work collaboratively with like-minded individuals to develop creative solutions to real-world problems.</p></div>
+          <div
+            class="z-10 flex flex-col items-center justify-center space-y-3 rounded-sm border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 hover:shadow-lg">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-600"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="h-8 w-8 text-white" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path d="M18.364 19.364a9 9 0 1 0 -12.728 0"></path>
+                <path d="M15.536 16.536a5 5 0 1 0 -7.072 0"></path>
+                <path d="M12 13m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+              </svg></div>
+            <h3 class="text-center text-xl font-semibold text-white">Networking</h3>
+            <p class="text-center text-gray-300">Networking is the act of creating and maintaining relationships with
+              individuals and groups in order to exchange information, ideas, and opportunities. </p>
+          </div>
+          <div
+            class="z-10 flex flex-col items-center justify-center space-y-3 rounded-sm border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 hover:shadow-lg">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-600"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="h-8 w-8 text-white" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path d="M12 9m-6 0a6 6 0 1 0 12 0a6 6 0 1 0 -12 0"></path>
+                <path d="M12 15l3.4 5.89l1.598 -3.233l3.598 .232l-3.4 -5.889"></path>
+                <path d="M6.802 12l-3.4 5.89l3.598 -.233l1.598 3.232l3.4 -5.889"></path>
+              </svg></div>
+            <h3 class="text-center text-xl font-semibold text-white">Prizes</h3>
+            <p class="text-center text-gray-300">Hackathons are a great way to win prizes and gain recognition for your
+              work. The prizes can range from cash to internships, and the recognition can be in the form of a job offer
+              or a scholarship.</p>
+          </div>
+          <div
+            class="z-10 flex flex-col items-center justify-center space-y-3 rounded-sm border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 hover:shadow-lg">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-600"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="h-8 w-8 text-white" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path
+                  d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3">
+                </path>
+                <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
+                <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+              </svg></div>
+            <h3 class="text-center text-xl font-semibold text-white">Fun</h3>
+            <p class="text-center text-gray-300">Hackathons are a great way to meet new people, learn new skills, and
+              have fun. You can also win prizes for your work.</p>
+          </div>
+        </div>
+      </section>
+     
+      <section id="Themes" class="min-h-screen w-full bg-gray-900 px-0 py-16 md:px-10">
+        <div class="text-white  mb-20 text-center text-4xl font-semibold sm:text-5xl">Themes</div>
+        <div class="grid grid-cols-1 gap-10 px-4 md:grid-cols-2 lg:grid-cols-3">
+          <div
+            class="z-10 flex flex-col items-center justify-evenly space-y-4 rounded-lg border border-gray-700 bg-gray-900 p-8">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="h-10 w-10 text-white" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path
+                  d="M7 7h10a2 2 0 0 1 2 2v1l1 1v3l-1 1v3a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-3l-1 -1v-3l1 -1v-1a2 2 0 0 1 2 -2z">
+                </path>
+                <path d="M10 16h4"></path>
+                <circle cx="8.5" cy="11.5" r=".5" fill="currentColor"></circle>
+                <circle cx="15.5" cy="11.5" r=".5" fill="currentColor"></circle>
+                <path d="M9 7l-1 -4"></path>
+                <path d="M15 7l1 -4"></path>
+              </svg></div>
+            <div class="text-center text-2xl font-semibold text-white">AI AND ML</div>
+            <div class="text-center text-gray-300">Create innovative applications that leverage machine learning
+              algorithms to solve complex problems, such as predictive analytics, natural language processing and
+              computer vision.</div>
+          </div>
+          <div
+            class="z-10 flex flex-col items-center justify-evenly space-y-4 rounded-lg border border-gray-700 bg-gray-900 p-8">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="h-10 w-10 text-white" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                <path d="M6.5 5c7.72 2.266 10.037 7.597 12.5 12.5"></path>
+                <path d="M17.5 5c-7.72 2.266 -10.037 7.597 -12.5 12.5"></path>
+              </svg></div>
+            <div class="text-center text-2xl font-semibold text-white">GAME DEVELOPMENT</div>
+            <div class="text-center text-gray-300">Develop immersive and engaging games, leveraging cutting-edge game
+              engines and technologies to create captivating gameplay experiences.</div>
+          </div>
+          <div
+            class="z-10 flex flex-col items-center justify-evenly space-y-4 rounded-lg border border-gray-700 bg-gray-900 p-8">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="h-10 w-10 text-white" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path d="M22 12h-6"></path>
+                <path d="M2 12h6"></path>
+                <path d="M8 7l8 5l-8 5z"></path>
+                <path d="M14 7h2v10h2"></path>
+              </svg></div>
+            <div class="text-center text-2xl font-semibold text-white">I-O-T</div>
+            <div class="text-center text-gray-300">Build connected devices and systems that collect and analyze data in
+              real-time, creating innovative solutions that improve efficiency and productivity across industries.</div>
+          </div>
+          <div
+            class="z-10 flex flex-col items-center justify-evenly space-y-4 rounded-lg border border-gray-700 bg-gray-900 p-8">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="h-10 w-10 text-white" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path d="M6 12l6 -9l6 9l-6 9z"></path>
+                <path d="M6 12l6 -3l6 3l-6 2z"></path>
+              </svg></div>
+            <div class="text-center text-2xl font-semibold text-white">WEB3 AND FIN-TECH</div>
+            <div class="text-center text-gray-300">Build decentralized applications (dApps) that run on the blockchain,
+              leveraging smart contracts to facilitate secure and transparent transactions.</div>
+          </div>
+          <div
+            class="z-10 flex flex-col items-center justify-evenly space-y-4 rounded-lg border border-gray-700 bg-gray-900 p-8">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="h-10 w-10 text-white" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path
+                  d="M3 8v8.5a2.5 2.5 0 0 0 2.5 2.5h1.06a3 3 0 0 0 2.34 -1.13l1.54 -1.92a2 2 0 0 1 3.12 0l1.54 1.92a3 3 0 0 0 2.34 1.13h1.06a2.5 2.5 0 0 0 2.5 -2.5v-8.5a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2z">
+                </path>
+                <path d="M8 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                <path d="M16 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+              </svg></div>
+            <div class="text-center text-2xl font-semibold text-white">AR / VR</div>
+            <div class="text-center text-gray-300">Use augmented and virtual reality technologies to create innovative
+              applications, such as training simulations, entertainment experiences, and marketing campaigns.</div>
+          </div>
+          <div
+            class="z-10 flex flex-col items-center justify-evenly space-y-4 rounded-lg border border-gray-700 bg-gray-900 p-8">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="h-10 w-10 text-white" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path
+                  d="M12 3a9 9 0 0 1 3.618 17.243l-2.193 -5.602a3 3 0 1 0 -2.849 0l-2.193 5.603a9 9 0 0 1 3.617 -17.244z">
+                </path>
+              </svg></div>
+            <div class="text-center text-2xl font-semibold text-white">OPEN INNOVATION</div>
+            <div class="text-center text-gray-300">Envision and engineer pioneering hardware or software solutions,
+              poised to effectuate a benevolent and lasting influence on the global stage.</div>
+          </div>
+        </div>
+      </section>
+      <section id="Sponsors" class="min-h-screen bg-gray-900 px-2 pb-4 pt-5 sm:pt-10">
+       
+        <h1 class="text-white  flex justify-center text-4xl font-bold"> SPONSORS</h1>
+        <div class="flex flex-wrap justify-center gap-10 py-10">
+          <div class="z-10 flex flex-col items-center space-y-5 rounded py-5"><a href="https://gen.xyz/"><img
+                src="./asset/ieee1.png" loading="lazy" alt="XYZ LOGO"
+                class="h-auto w-72 rounded-2xl bg-gray-900 object-contain p-3 sm:h-28"></a></div>
+          <div class="z-10 flex flex-col items-center space-y-5 rounded py-5"><a href="https://www.taskade.com/"><img
+                src="./asset/ieee1.png"
+                loading="lazy" alt="TASKADE LOGO"
+                class="h-auto w-72 rounded-2xl bg-gray-900 object-contain p-3 sm:h-28"></a></div>
+          <div class="z-10 flex flex-col items-center space-y-5 rounded py-5"><a href="https://www.avairsense.com/"><img
+                src="./asset/ieee1.png" loading="lazy" alt="avairsense LOGO"
+                class="h-auto w-72 rounded-2xl bg-gray-900 object-contain p-3 sm:h-28"></a></div>
+          <div class="z-10 flex flex-col items-center space-y-5 rounded py-5"><a href="https://www.wolfram.com/"><img
+                src="./asset/ieee1.png" loading="lazy" alt="WOLFRAM LOGO"
+                class="h-auto w-72 rounded-2xl bg-gray-900 object-contain p-3 sm:h-28"></a></div>
+          <div class="z-10 flex flex-col items-center space-y-5 rounded py-5"><a href="https://www.codechef.com/"><img
+                src="./asset/ieee1.png" loading="lazy" alt="CODECHEF LOGO"
+                class="h-auto w-72 rounded-2xl bg-gray-900 object-contain p-3 sm:h-28"></a></div>
+        </div>
+     
+      </section>
+      <section id="Organizers" class="min-h-screen rounded-lg bg-gray-900 px-2 pb-4  text-lg sm:px-10 ">
+        <div class="text-white  mb-12 flex justify-center text-4xl font-semibold">Organizing Admin</div>
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-10">
+          <div
+            class="z-10 flex w-[44%] flex-col items-center space-y-5 rounded-3xl bg-black bg-opacity-30 p-8 text-xl sm:w-1/6">
+            <img
+              src="https://e1.pxfuel.com/desktop-wallpaper/352/697/desktop-wallpaper-naruto-uzumaki-naruto-naruto-pinterest-naruto-profile.jpg"
+              loading="lazy" alt="" class="h-16 w-16 rounded-md object-cover object-center sm:h-32 sm:w-32">
+            <div>
+              <div class="indigo mb-2 text-center text-xl font-medium text-gray-200 antialiased md:text-lg">Naruto
+              </div>
+              <div class=" sm:text-md flex justify-center text-lg text-gray-300">Advisor</div>
+            </div>
+          </div>
+          <div
+            class="z-10 flex w-[44%] flex-col items-center space-y-5 rounded-3xl bg-black bg-opacity-30 p-8 text-xl sm:w-1/6">
+            <img src="https://e1.pxfuel.com/desktop-wallpaper/352/697/desktop-wallpaper-naruto-uzumaki-naruto-naruto-pinterest-naruto-profile.jpg"
+              loading="lazy" alt="" class="h-16 w-16 rounded-md object-cover object-center sm:h-32 sm:w-32">
+            <div>
+              <div class="indigo mb-2 text-center text-xl font-medium text-gray-200 antialiased md:text-lg">Naruto
+              </div>
+              <div class=" sm:text-md flex justify-center text-lg text-gray-300">Advisor</div>
+            </div>
+          </div>
+          <div
+            class="z-10 flex w-[44%] flex-col items-center space-y-5 rounded-3xl bg-black bg-opacity-30 p-8 text-xl sm:w-1/6">
+            <img
+              src="https://e1.pxfuel.com/desktop-wallpaper/352/697/desktop-wallpaper-naruto-uzumaki-naruto-naruto-pinterest-naruto-profile.jpg"
+              loading="lazy" alt="" class="h-16 w-16 rounded-md object-cover object-center sm:h-32 sm:w-32">
+            <div>
+              <div class="indigo mb-2 text-center text-xl font-medium text-gray-200 antialiased md:text-lg">Naruto
+              </div>
+              <div class=" sm:text-md flex justify-center text-lg text-gray-300">Advisor</div>
+            </div>
+          </div>
+          <div
+            class="z-10 flex w-[44%] flex-col items-center space-y-5 rounded-3xl bg-black bg-opacity-30 p-8 text-xl sm:w-1/6">
+            <img src="https://e1.pxfuel.com/desktop-wallpaper/352/697/desktop-wallpaper-naruto-uzumaki-naruto-naruto-pinterest-naruto-profile.jpg"
+              loading="lazy" alt="" class="h-16 w-16 rounded-md object-cover object-center sm:h-32 sm:w-32">
+            <div>
+              <div class="indigo mb-2 text-center text-xl font-medium text-gray-200 antialiased md:text-lg">Naruto
+              </div>
+              <div class=" sm:text-md flex justify-center text-lg text-gray-300">Advisor</div>
+            </div>
+          </div>
+          <div
+            class="z-10 flex w-[44%] flex-col items-center space-y-5 rounded-3xl bg-black bg-opacity-30 p-8 text-xl sm:w-1/6">
+            <img
+              src="https://e1.pxfuel.com/desktop-wallpaper/352/697/desktop-wallpaper-naruto-uzumaki-naruto-naruto-pinterest-naruto-profile.jpg"
+              loading="lazy" alt="" class="h-16 w-16 rounded-md object-cover object-center sm:h-32 sm:w-32">
+            <div>
+              <div class="indigo mb-2 text-center text-xl font-medium text-gray-200 antialiased md:text-lg">Naruto
+              </div>
+              <div class=" sm:text-md flex justify-center text-lg text-gray-300">Advisor</div>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+     
+      <section id="ContactUs" class="min-h-screen bg-gray-900 pt-10">
+        <div class="text-white  my-20 text-center text-4xl font-semibold sm:text-5xl">Contact Us</div>
+        <div class="my-8 flex flex-col items-center justify-evenly space-y-10">
+          <div class="flex items-center justify-center space-x-6"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"
+              class="h-20 w-20  rounded-full bg-indigo-600 p-4 text-white sm:h-24 sm:w-24"
+              data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: currentColor;">
+              <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+              <path d="M3 7l9 6l9 -6"></path>
+            </svg>
+            <div class="indigo z-10 text-center text-xl text-gray-200 antialiased sm:text-2xl"><a
+                href="mailto:help@hacksrm.tech">rao@email.com</a></div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center space-x-6">
+          <div class="z-10 flex items-center justify-center rounded-full bg-gray-900 bg-opacity-70 p-2"><a
+              href="https://www.instagram.com/mugeshraoo/" target="_blank" rel="noopener noreferrer"
+              class="text-gray-200 hover:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" class="text-fuchsia-500" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                <path d="M16.5 7.5l0 .01"></path>
+              </svg></a></div>
+          <div class="z-10 flex items-center justify-center rounded-full bg-gray-900 bg-opacity-70 p-2"><a
+              href="https://twitter.com/Mugesh_Rao_Dev" target="_blank" rel="noopener noreferrer"
+              class="text-gray-200 hover:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" class="text-blue-400" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path
+                  d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z">
+                </path>
+              </svg></a></div>
+          <div class="z-10 flex items-center justify-center rounded-full bg-gray-900 bg-opacity-70 p-2"><a
+              href="https://www.linkedin.com/in/mugesh-rao-2003/" target="_blank" rel="noopener noreferrer"
+              class="text-gray-200 hover:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" class="text-blue-600" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                <path d="M8 11l0 5"></path>
+                <path d="M8 8l0 .01"></path>
+                <path d="M12 16l0 -5"></path>
+                <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+              </svg></a></div>
+        </div>
+        <div class="flex flex-col items-center justify-center space-y-6 pt-8 text-white">
+          <h5 class="text-center text-2xl font-semibold text-gray-200">In Collaboration With</h5><img
+            src="./asset/ieee1.png"
+            alt="IEEE" class="z-10 h-24 rounded-md p-4">
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js'></script>
+<script  src="./script/index.js"></script>
+
+</html>

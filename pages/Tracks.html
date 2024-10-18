@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'>
+    <link rel="stylesheet" href="./styles/index.css">
+
+    <title>NFTS 2023 - IEEE </title>
+</head>
+
+<body>
+    <div id="root">
+        <div class="">
+            <div class="fixed inset-0 z-0">
+                <div class="relative w-full h-full overflow-hidden pointer-events-auto z-50">
+                    <div class="w-full h-full">
+                        <!-- Desktop Image -->
+                        <img class="hidden sm:block w-full h-full" src="../asset/desktop.png"
+                            alt="Desktop Image Alt Text" />
+
+                        <!-- Mobile Image -->
+                        <img class="block sm:hidden w-full h-full" src="../asset/mobile.png"
+                            alt="Mobile Image Alt Text" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flex min-h-screen items-center justify-center bg-gray-900">
+                <div
+                    class="fixed left-0 right-0 top-0 z-20 h-14 border-b border-gray-700 bg-gray-900 bg-opacity-80 backdrop-blur-lg backdrop-filter">
+                    <div class="flex justify-between items-center h-full px-4">
+                        <!-- Logo Image -->
+                        <a href="../index.html" class="flex items-center text-gray-300 hover:text-indigo-500">
+                            <img src="../asset/ieee1.png" class="w-16 h-8 ml-8" alt="">
+                        </a>
+
+                        <!-- Desktop Navigation -->
+                        <div class="hidden md:flex space-x-8">
+                            <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3"
+                                href="./Tracks.html">Tracks</a>
+                            <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3"
+                                href="./Sponsors.html">Sponsors</a>
+                            <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3"
+                                href="./Venue.html">Venue</a>
+                            <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3"
+                                href="#Organizers">Admin</a>
+                            <a class="cursor-pointer py-1 px-4 my-2 bg-purple-600 rounded-lg text-white text-center hover:rounded-xl"
+                                href="#">Registers</a>
+                        </div>
+
+                        <!-- Mobile Navigation -->
+                        <div class="md:hidden">
+                            <button id="mobileNavButton" onclick="toggleMobileNav()">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="h-7 w-7 text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="mobileNavModal"
+                    class="hidden md:hidden fixed z-20 top-0 left-0 w-full h-full flex mx-auto items-center justify-center bg-black bg-opacity-70">
+                    <div class=" rounded-lg p-6 space-y-10">
+                        <a href="../index.html" class="flex items-center text-gray-300 hover:text-indigo-500"
+                            onclick="closeMobileNav()">
+                            <img src="../asset/ieee1.png" class="w-20 h-10 " alt="">
+                        </a>
+                        <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block text-2xl font-bold "
+                            href="./Tracks.html" onclick="closeMobileNav()">Tracks</a>
+                        <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block  text-2xl font-bold"
+                            href="./Sponsors.html" onclick="closeMobileNav()">Sponsors</a>
+                        <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block text-2xl font-bold "
+                            href="./Venue.html" onclick="closeMobileNav()">Venue</a>
+                        <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block  text-2xl font-bold" href="#"
+                            onclick="closeMobileNav()">Admin</a>
+                        <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block  text-2xl font-bold" href="#"
+                            onclick="closeMobileNav()">Registers</a>
+                        <a class="cursor-pointer text-red-500 hover:text-red-500 block  text-2xl font-bold border border-red-500 text-center rounded-lg p-1"
+                            onclick="closeMobileNav()">Close</a>
+
+                    </div>
+                </div>
+
+                <script>
+                    const mobileNavModal = document.getElementById("mobileNavModal");
+
+                    function toggleMobileNav() {
+                        mobileNavModal.classList.toggle("hidden");
+                    }
+
+                    function closeMobileNav() {
+                        mobileNavModal.classList.add("hidden");
+                    }
+                </script>
+
+
+<section id="Prizes" class="my-0 min-h-screen justify-center bg-gray-900 px-4 py-24 sm:px-20 sm:py-24">
+    <div class="mb-6 flex flex-wrap items-center justify-center space-x-3 pb-10 text-center text-3xl font-semibold leading-relaxed text-indigo-200 sm:text-5xl">
+        <div>Events - </div>
+        <div class="rounded-2xl bg-indigo-500 px-3 py-1.5 text-white">Day 1</div>
+    </div>
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div class=" z-10 flex flex-col items-center justify-center space-y-6 rounded-lg border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 shadow-lg hover:shadow-xl hover:bg-indigo-900 transform hover:scale-105">
+            <h3 class="text-center text-2xl font-semibold text-white">Networking Event</h3>
+            <button class="relative px-6 py-2 text-sm font-semibold text-white bg-indigo-600 border-2 border-indigo-600 rounded-full overflow-hidden transition duration-200 hover:bg-indigo-700 hover:border-indigo-700 focus:outline-none focus:border-indigo-700 focus:bg-indigo-700">
+                Register Now
+                <span class="absolute top-0 left-0 w-0 h-0 transform scale-0 origin-top-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute top-0 right-0 w-0 h-0 transform scale-0 origin-top-right bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0 transform scale-0 origin-bottom-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 right-0 w-0 h-0 transform scale-0 origin-bottom-right bg-indigo-600 animate-bubble"></span>
+            </button>
+        </div>
+        
+        <div class=" z-10 flex flex-col items-center justify-center space-y-6 rounded-lg border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 shadow-lg hover:shadow-xl hover:bg-indigo-900 transform hover:scale-105">
+            <h3 class="text-center text-2xl font-semibold text-white">Networking Event</h3>
+            <button class="relative px-6 py-2 text-sm font-semibold text-white bg-indigo-600 border-2 border-indigo-600 rounded-full overflow-hidden transition duration-200 hover:bg-indigo-700 hover:border-indigo-700 focus:outline-none focus:border-indigo-700 focus:bg-indigo-700">
+                Register Now
+                <span class="absolute top-0 left-0 w-0 h-0 transform scale-0 origin-top-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute top-0 right-0 w-0 h-0 transform scale-0 origin-top-right bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0 transform scale-0 origin-bottom-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 right-0 w-0 h-0 transform scale-0 origin-bottom-right bg-indigo-600 animate-bubble"></span>
+            </button>
+        </div>
+        <div class=" z-10 flex flex-col items-center justify-center space-y-6 rounded-lg border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 shadow-lg hover:shadow-xl hover:bg-indigo-900 transform hover:scale-105">
+            <h3 class="text-center text-2xl font-semibold text-white">Networking Event</h3>
+            <button class="relative px-6 py-2 text-sm font-semibold text-white bg-indigo-600 border-2 border-indigo-600 rounded-full overflow-hidden transition duration-200 hover:bg-indigo-700 hover:border-indigo-700 focus:outline-none focus:border-indigo-700 focus:bg-indigo-700">
+                Register Now
+                <span class="absolute top-0 left-0 w-0 h-0 transform scale-0 origin-top-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute top-0 right-0 w-0 h-0 transform scale-0 origin-top-right bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0 transform scale-0 origin-bottom-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 right-0 w-0 h-0 transform scale-0 origin-bottom-right bg-indigo-600 animate-bubble"></span>
+            </button>
+        </div>
+        <div class=" z-10 flex flex-col items-center justify-center space-y-6 rounded-lg border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 shadow-lg hover:shadow-xl hover:bg-indigo-900 transform hover:scale-105">
+            <h3 class="text-center text-2xl font-semibold text-white">Networking Event</h3>
+            <button class="relative px-6 py-2 text-sm font-semibold text-white bg-indigo-600 border-2 border-indigo-600 rounded-full overflow-hidden transition duration-200 hover:bg-indigo-700 hover:border-indigo-700 focus:outline-none focus:border-indigo-700 focus:bg-indigo-700">
+                Register Now
+                <span class="absolute top-0 left-0 w-0 h-0 transform scale-0 origin-top-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute top-0 right-0 w-0 h-0 transform scale-0 origin-top-right bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0 transform scale-0 origin-bottom-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 right-0 w-0 h-0 transform scale-0 origin-bottom-right bg-indigo-600 animate-bubble"></span>
+            </button>
+        </div>  <div class=" z-10 flex flex-col items-center justify-center space-y-6 rounded-lg border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 shadow-lg hover:shadow-xl hover:bg-indigo-900 transform hover:scale-105">
+            <h3 class="text-center text-2xl font-semibold text-white">Networking Event</h3>
+            <button class="relative px-6 py-2 text-sm font-semibold text-white bg-indigo-600 border-2 border-indigo-600 rounded-full overflow-hidden transition duration-200 hover:bg-indigo-700 hover:border-indigo-700 focus:outline-none focus:border-indigo-700 focus:bg-indigo-700">
+                Register Now
+                <span class="absolute top-0 left-0 w-0 h-0 transform scale-0 origin-top-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute top-0 right-0 w-0 h-0 transform scale-0 origin-top-right bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0 transform scale-0 origin-bottom-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 right-0 w-0 h-0 transform scale-0 origin-bottom-right bg-indigo-600 animate-bubble"></span>
+            </button>
+        </div>  <div class=" z-10 flex flex-col items-center justify-center space-y-6 rounded-lg border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 shadow-lg hover:shadow-xl hover:bg-indigo-900 transform hover:scale-105">
+            <h3 class="text-center text-2xl font-semibold text-white">Networking Event</h3>
+            <button class="relative px-6 py-2 text-sm font-semibold text-white bg-indigo-600 border-2 border-indigo-600 rounded-full overflow-hidden transition duration-200 hover:bg-indigo-700 hover:border-indigo-700 focus:outline-none focus:border-indigo-700 focus:bg-indigo-700">
+                Register Now
+                <span class="absolute top-0 left-0 w-0 h-0 transform scale-0 origin-top-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute top-0 right-0 w-0 h-0 transform scale-0 origin-top-right bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0 transform scale-0 origin-bottom-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 right-0 w-0 h-0 transform scale-0 origin-bottom-right bg-indigo-600 animate-bubble"></span>
+            </button>
+        </div>  <div class=" z-10 flex flex-col items-center justify-center space-y-6 rounded-lg border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 shadow-lg hover:shadow-xl hover:bg-indigo-900 transform hover:scale-105">
+            <h3 class="text-center text-2xl font-semibold text-white">Networking Event</h3>
+            <button class="relative px-6 py-2 text-sm font-semibold text-white bg-indigo-600 border-2 border-indigo-600 rounded-full overflow-hidden transition duration-200 hover:bg-indigo-700 hover:border-indigo-700 focus:outline-none focus:border-indigo-700 focus:bg-indigo-700">
+                Register Now
+                <span class="absolute top-0 left-0 w-0 h-0 transform scale-0 origin-top-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute top-0 right-0 w-0 h-0 transform scale-0 origin-top-right bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0 transform scale-0 origin-bottom-left bg-indigo-600 animate-bubble"></span>
+                <span class="absolute bottom-0 right-0 w-0 h-0 transform scale-0 origin-bottom-right bg-indigo-600 animate-bubble"></span>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+
+</html>
