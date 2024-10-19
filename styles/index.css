@@ -84,11 +84,16 @@
   .bg2 {
       opacity: 0.1;
     }
+    
+
   }
   @media screen and (min-width: 93.75rem) {
     .swiper {
       width: 85%;
     }
+
+
+
   }
 
 
@@ -225,4 +230,43 @@ a {
 
 .bg-blue-500 {
   background-color: #4299e1;
+}
+
+@media screen and (max-width: 768px){
+
+  .swiper-slide--one {
+    border-radius: 30px;
+
+    background: url("../asset/a1.jpg") no-repeat 50% 50%/cover;
+  }
+
+  .swiper-slide--two {
+    border-radius: 30px;
+
+    background:  url("../asset/a2.jpg") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-slide--three {
+    border-radius: 30px;
+
+    background: url("../asset/a3.jpg") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-slide--four {
+    border-radius: 30px;
+
+    background: url("../asset/a4.jpg") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-slide--five {
+  border-radius: 30px;
+    background:  url("../asset/a5.jpg") no-repeat 50% 50%/cover;
+  }
+
+  .swiper-slide--six {
+    border-radius: 30px;
+      background:  url("../asset/a6.jpg") no-repeat 50% 50%/cover;
+    }
+  
+
 }
