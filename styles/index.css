@@ -38,31 +38,36 @@
   .swiper-slide--one {
     border-radius: 30px;
 
-    background: url("../asset/events.jpg") no-repeat 50% 50%/cover;
+    background: url("../asset/1.jpg") no-repeat 50% 50%/cover;
   }
   
   .swiper-slide--two {
     border-radius: 30px;
 
-    background:  url("../asset/events.jpg") no-repeat 50% 50%/cover;
+    background:  url("../asset/2.jpg") no-repeat 50% 50%/cover;
   }
   
   .swiper-slide--three {
     border-radius: 30px;
 
-    background: url("../asset/events.jpg") no-repeat 50% 50%/cover;
+    background: url("../asset/3.jpg") no-repeat 50% 50%/cover;
   }
   
   .swiper-slide--four {
     border-radius: 30px;
 
-    background: url("../asset/events.jpg") no-repeat 50% 50%/cover;
+    background: url("../asset/4.jpg") no-repeat 50% 50%/cover;
   }
   
   .swiper-slide--five {
   border-radius: 30px;
-    background:  url("../asset/events.jpg") no-repeat 50% 50%/cover;
+    background:  url("../asset/5.jpg") no-repeat 50% 50%/cover;
   }
+
+  .swiper-slide--six {
+    border-radius: 30px;
+      background:  url("../asset/6.jpg") no-repeat 50% 50%/cover;
+    }
   
   .swiper-3d .swiper-slide-shadow-left,
   .swiper-3d .swiper-slide-shadow-right {
