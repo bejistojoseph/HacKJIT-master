@@ -1,6 +1,26 @@
 
 
 
+.h1{
+  font-size: 80px;
+  height: 100px;
+  line-height: 100px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 40%;
+  margin-bottom: 10%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.text-lg.font-semibold.mb-6{
+  margin-bottom: 10%;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 50px;
+}
+
 .swiper {
     width: 100%;
     padding-top: 3.125rem;
@@ -233,6 +253,26 @@ a {
 }
 
 @media screen and (max-width: 768px){
+
+  .h1{
+    font-size: 40px;
+    height: 200px;
+    line-height: 100px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 120%;
+    margin-bottom: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .text-lg.font-semibold.mb-6{
+    margin-bottom: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 50px;
+  }
 
   .swiper-slide--one {
     border-radius: 30px;
