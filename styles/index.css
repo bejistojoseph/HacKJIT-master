@@ -1,12 +1,20 @@
 
 
 
+.sblogo{
+  position: absolute;
+  left: 32.5%;
+  width: 350px;
+  height: 350px;
+}
+
+
 .h1{
   font-size: 80px;
   height: 100px;
   line-height: 100px;
   font-family: 'Times New Roman', Times, serif;
-  margin-top: 40%;
+  margin-top: 50%;
   margin-bottom: 10%;
   margin-left: 2%;
   margin-right: 2%;
@@ -253,6 +261,26 @@ a {
 }
 
 @media screen and (max-width: 768px){
+
+  .navbar.absolute {
+    background-image: url('../asset/navbar.png');
+    background-size: cover;
+    background-position: center;
+    height: 58px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    top: 0px;
+    width: 100%;
+  }
+
+  .sblogo{
+    position: absolute;
+    left: 10%;
+    width: 350px;
+    height: 350px;
+  }
 
   .h1{
     font-size: 40px;
