@@ -3,7 +3,8 @@
 
 .sblogo{
   position: absolute;
-  left: 32.5%;
+  left: 39.25%;
+  top: 5%;
   width: 350px;
   height: 350px;
 }
@@ -262,18 +263,6 @@ a {
 
 @media screen and (max-width: 768px){
 
-  .navbar.absolute {
-    background-image: url('../asset/navbar.png');
-    background-size: cover;
-    background-position: center;
-    height: 58px;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
-    top: 0px;
-    width: 100%;
-  }
 
   .sblogo{
     position: absolute;
