@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'>
+    <link rel="stylesheet" href="./styles/index.css">
+
+    <title>NFTS 2023 - IEEE </title>
+</head>
+
+<body>
+    <div id="root">
+        <div class="">
+            <div class="fixed inset-0 z-0">
+                <div class="relative w-full h-full overflow-hidden pointer-events-auto z-50">
+                    <div class="w-full h-full">
+                        <!-- Desktop Image -->
+                        <img class="hidden sm:block w-full h-full" src="../asset/desktop.png"
+                            alt="Desktop Image Alt Text" />
+
+                        <!-- Mobile Image -->
+                        <img class="block sm:hidden w-full h-full" src="../asset/mobile.png"
+                            alt="Mobile Image Alt Text" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flex min-h-screen items-center justify-center bg-gray-900">
+                <div
+                    class="fixed left-0 right-0 top-0 z-20 h-14 border-b border-gray-700 bg-gray-900 bg-opacity-80 backdrop-blur-lg backdrop-filter">
+                    <div class="flex justify-between items-center h-full px-4">
+                        <!-- Logo Image -->
+                        <a href="../index.html" class="flex items-center text-gray-300 hover:text-indigo-500">
+                            <img src="../asset/ieee1.png" class="w-16 h-8 ml-8" alt="">
+                        </a>
+
+                        <!-- Desktop Navigation -->
+                        <div class="hidden md:flex space-x-8">
+                            <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3"
+                                href="./Tracks.html">Tracks</a>
+                            <!-- <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3"
+                                href="./Sponsors.html">Sponsors</a>
+                            <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3"
+                                href="./Venue.html">Venue</a>
+                            <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3"
+                                href="#Organizers">Admin</a> -->
+                            <a class="cursor-pointer py-1 px-4 my-2 bg-purple-600 rounded-lg text-white text-center hover:rounded-xl"
+                                href="https://forms.gle/bQkiCX9J6KDd8JNM7">Registers</a>
+                        </div>
+
+                        <!-- Mobile Navigation -->
+                        <div class="md:hidden">
+                            <button id="mobileNavButton" onclick="toggleMobileNav()">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="h-7 w-7 text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="mobileNavModal"
+                    class="hidden md:hidden fixed z-20 top-0 left-0 w-full h-full flex mx-auto items-center justify-center bg-black bg-opacity-70">
+                    <div class=" rounded-lg p-6 space-y-10">
+                        <a href="../index.html" class="flex items-center text-gray-300 hover:text-indigo-500"
+                            onclick="closeMobileNav()">
+                            <img src="../asset/ieee1.png" class="w-20 h-10 " alt="">
+                        </a>
+                        <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block text-2xl font-bold "
+                            href="./Tracks.html" onclick="closeMobileNav()">Tracks</a>
+                        <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block  text-2xl font-bold"
+                            href="./Sponsors.html" onclick="closeMobileNav()">Sponsors</a>
+                        <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block text-2xl font-bold "
+                            href="./Venue.html" onclick="closeMobileNav()">Venue</a>
+                        <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block  text-2xl font-bold" href="#"
+                            onclick="closeMobileNav()">Admin</a>
+                        <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block  text-2xl font-bold" href="#"
+                            onclick="closeMobileNav()">Registers</a>
+                        <a class="cursor-pointer text-red-500 hover:text-red-500 block  text-2xl font-bold border border-red-500 text-center rounded-lg p-1"
+                            onclick="closeMobileNav()">Close</a>
+
+                    </div>
+                </div>
+
+                <script>
+                    const mobileNavModal = document.getElementById("mobileNavModal");
+
+                    function toggleMobileNav() {
+                        mobileNavModal.classList.toggle("hidden");
+                    }
+
+                    function closeMobileNav() {
+                        mobileNavModal.classList.add("hidden");
+                    }
+                </script>
+
+
+                <section id="Prizes" class="my-0 min-h-screen justify-center bg-gray-900 px-4 py-24 sm:px-20 sm:py-24">
+                    <div
+                        class="mb-6 flex flex-wrap items-center justify-center space-x-3 pb-10 text-center text-3xl font-semibold leading-relaxed text-indigo-200 sm:text-5xl">
+                        <div>Events</div>
+
+                    </div>
+                    <div class="">
+                        <div
+                            class=" z-10 flex flex-col items-center justify-center space-y-6 rounded-lg border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 shadow-lg hover:shadow-xl hover:bg-indigo-900 transform hover:scale-105">
+                            <h3 class="text-center text-2xl font-semibold text-white">Networking Event</h3>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full  text-white border-collapse">
+                                    <thead>
+                                        <tr class="bg-indigo-600">
+                                            <th class="py-3 px-6 text-left">PS ID</th>
+                                            <th class="py-3 px-6 text-left">Problem Statement</th>
+                                        </tr>
+                                    </thead>
+                                    <tb <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM01</td>
+                                        <td class="py-3 px-6">AI-powered Legal Documentation Assistant: Develop an AI system that helps legal professionals in drafting, editing, and summarizing legal documents by using natural language processing (NLP) techniques.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM02</td>
+                                        <td class="py-3 px-6">Image Classification Tool for Medical Diagnosis: Create an AI tool that can classify medical images (e.g., X-rays, MRIs) into diagnostic categories, helping doctors in early and accurate detection of diseases.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM03</td>
+                                        <td class="py-3 px-6">Predictive Maintenance System for Software Services: Build a machine learning model that predicts potential failures in cloud services or software systems, allowing proactive maintenance and reduced downtime.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM04</td>
+                                        <td class="py-3 px-6">AI-driven Personal Health Assistant: Develop an AI-based personal health assistant app that can provide tailored advice on diet, exercise, and medication based on user data.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM05</td>
+                                        <td class="py-3 px-6">NLP-based Legal Document Summarizer: Build an NLP model to automatically summarize long legal documents, making them easier to read and understand for lawyers and clients alike.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM06</td>
+                                        <td class="py-3 px-6">AI-based Market Basket Analysis for E-commerce Recommendations: Use AI to identify patterns in customer purchase behavior and recommend product bundles to increase cross-selling opportunities in e-commerce platforms.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM07</td>
+                                        <td class="py-3 px-6">Machine Learning Model to Forecast Customer Churn: Develop a predictive model to identify customers at risk of leaving a service, helping businesses retain them by offering personalized interventions.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM08</td>
+                                        <td class="py-3 px-6">Intelligent Resume Parser for HR Systems: Create an AI tool that parses resumes and extracts key details (skills, education, experience), enabling HR teams to shortlist candidates more efficiently.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM09</td>
+                                        <td class="py-3 px-6">AI-based Personalized Learning Platform for Schools: Build a learning platform that tailors educational content based on the learning style and pace of individual students, powered by AI.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM10</td>
+                                        <td class="py-3 px-6">Sentiment Analysis of Social Media Content for Brand Monitoring: Develop a tool that analyzes social media content to detect customer sentiment about a brand, helping companies manage their online reputation.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM11</td>
+                                        <td class="py-3 px-6">AI-powered Traffic Management System: Create a solution that uses AI to monitor real-time traffic and adjust signal timings dynamically to reduce congestion in urban areas.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM12</td>
+                                        <td class="py-3 px-6">AI-driven Predictive Model for Stock Market Trends: Build a machine learning model that analyzes historical stock data and predicts future market trends, helping investors make informed decisions.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM13</td>
+                                        <td class="py-3 px-6">Machine Learning Model to Detect Fake News: Develop an AI model that can identify misleading or false news articles based on language patterns and content analysis.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM14</td>
+                                        <td class="py-3 px-6">AI-based Customer Service Chatbot for E-commerce: Design an AI chatbot that can assist customers in e-commerce platforms, answering questions and guiding them through the purchase process.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM15</td>
+                                        <td class="py-3 px-6">AI-driven Automated Essay Grading System for Education: Create a tool that uses machine learning to automatically grade student essays, providing feedback on grammar, structure, and content.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM16</td>
+                                        <td class="py-3 px-6">Predictive Text Generation Using Transformer Models: Build a text generation system that uses transformer models (e.g., GPT) to complete or generate text based on an initial input, useful in content creation.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM17</td>
+                                        <td class="py-3 px-6">AI-powered Talent Acquisition and Recruitment System: Develop an AI-based platform that matches job seekers with open positions based on their skills and experience, streamlining the recruitment process.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM18</td>
+                                        <td class="py-3 px-6">Machine Learning-based Email Spam Detection: Create a machine learning model that detects and filters out spam emails in real-time, improving email security.</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                                        <td class="py-3 px-6">AM19</td>
+                                        <td class="py-3 px-6">AI-driven Personalized Diet Recommendation System: Build an AI system that provides personalized diet plans based on user health metrics, lifestyle, and preferences.</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <button
+                                class="relative px-6 py-2 text-sm font-semibold text-white bg-indigo-600 border-2 border-indigo-600 rounded-full overflow-hidden transition duration-200 hover:bg-indigo-700 hover:border-indigo-700 focus:outline-none focus:border-indigo-700 focus:bg-indigo-700">
+                                Register Now
+                                <span
+                                    class="absolute top-0 left-0 w-0 h-0 transform scale-0 origin-top-left bg-indigo-600 animate-bubble"></span>
+                                <span
+                                    class="absolute top-0 right-0 w-0 h-0 transform scale-0 origin-top-right bg-indigo-600 animate-bubble"></span>
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0 transform scale-0 origin-bottom-left bg-indigo-600 animate-bubble"></span>
+                                <span
+                                    class="absolute bottom-0 right-0 w-0 h-0 transform scale-0 origin-bottom-right bg-indigo-600 animate-bubble"></span>
+                            </button>
+                        </div>
+
+                      
+                </section>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+
+</html>

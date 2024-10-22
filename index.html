@@ -9,42 +9,48 @@
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'>
   <link rel="stylesheet" href="./styles/index.css">
 
-  <title>Hackathon 2024 - IEEE </title>
-
-
+  <title>NFTS 2023 - IEEE </title>
   <script>
-    document.onreadystatechange = function () {
-      if (document.readyState === 'loading') {
-        document.getElementById('loader').style.display = 'flex';
-      }
-    };
-    window.onload = function () {
-      setTimeout(function () {
-        document.getElementById('loader').style.display = 'none';
-      }, 2000); // 3000 milliseconds = 3 seconds
-    };
-  </script>
+    // Countdown logic in JavaScript
+    document.addEventListener("DOMContentLoaded", function () {
+      // Set the date we're counting down to (12 days from now)
+      const countdownDate = new Date();
+      countdownDate.setDate(countdownDate.getDate() + 12);
 
+      // Update the countdown every 1 second
+      const x = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        // Calculate days, hours, minutes, and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Display the results in the respective elements
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        // If the countdown is finished, stop the timer
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("days").innerText = "00";
+          document.getElementById("hours").innerText = "00";
+          document.getElementById("minutes").innerText = "00";
+          document.getElementById("seconds").innerText = "00";
+        }
+      }, 1000);
+    });
+  </script>
 </head>
 
 <body>
-  <div>
-    <!-- Loader HTML -->
-    <div id="loader" class="loader h-full w-full bg-black fixed flex justify-center items-center top-0 left-0 ">
-      <img src="./asset/loader.svg" alt="" class="w-1/3 h-1/3">
-    </div>
-
-    <!-- Loader CSS -->
-    <style>
-      .loader {
-        z-index: 9999;
-
-      }
-    </style>
-
+  <div id="root">
     <div class="">
       <div class="fixed inset-0 z-0">
-        <div class="relative w-full h-full  pointer-events-auto z-50">
+        <div class="relative w-full h-full overflow-hidden pointer-events-auto z-50">
           <div class="w-full h-full">
             <!-- Desktop Image -->
             <img class="hidden sm:block w-full h-full" src="./asset/desktop.png" alt="Desktop Image Alt Text" />
@@ -54,89 +60,176 @@
           </div>
         </div>
       </div>
-      <div class="navbar absolute " id="navbar">
-        <div class="top-left">
-          <a href="./pages/Tracks.html" class="comp text-white hover:text-purple-600 transition duration-300"></a>
-          <a href="./pages/Sponsors.html"
-            class="init text-white hover:text-purple-600 transition duration-300"></a>
-          <a href="/workshops" class="init text-white hover:text-purple-600 transition duration-300"></a>
+
+
+      <div class="flex min-h-screen items-center justify-center bg-gray-900">
+        <div
+          class="fixed left-0 right-0 top-0 z-20 h-14 border-b border-gray-700 bg-gray-900 bg-opacity-80 backdrop-blur-lg backdrop-filter">
+          <div class="flex justify-between items-center h-full px-4">
+            <!-- Logo Image -->
+            <a href="#" class="flex items-center text-gray-300 hover:text-indigo-500">
+              <img src="./asset/ieee1.png" class="w-16 h-8 ml-8" alt="">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+              <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3" href="./pages/Tracks.html">Tracks</a>
+              <!-- <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3"
+                href="./pages/Sponsors.html">Sponsors</a> -->
+              <!-- <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3" href="./pages/Venue.html">Venue</a>
+              <a class="cursor-pointer text-gray-300 hover:text-indigo-500 my-3" href="#Organizers">Admin</a> -->
+              <a class="cursor-pointer py-1 px-4 my-2 bg-purple-600 rounded-lg text-white text-center hover:rounded-xl"
+                href="https://forms.gle/bQkiCX9J6KDd8JNM7">Registers</a>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden">
+              <button id="mobileNavButton" onclick="toggleMobileNav()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="h-7 w-7 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-        <!-- Menu Icon for Mobile -->
-        <button id="" class="md:hidden text-transparent">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-        <a href="/" class="logo ">
-          <img src="./asset/ieee1.png" class="logo" alt="">
-        </a>
-        <div class="top-left">
-          <a href="./pages/Venue.html" class="comp text-white hover:text-purple-600 transition duration-300"></a>
-          <a href="./pages/Register.html"
-            class="init text-white hover:text-purple-600 transition duration-300"></a>
-          <a href="/workshops" class="init text-white hover:text-purple-600 transition duration-300"></a>
+
+        <div id="mobileNavModal"
+          class="hidden md:hidden fixed z-20 top-0 left-0 w-full h-full flex mx-auto items-center justify-center bg-black bg-opacity-70">
+          <div class=" rounded-lg p-6 space-y-10">
+            <a href="../index.html" class="flex items-center text-gray-300 hover:text-indigo-500"
+              onclick="closeMobileNav()">
+              <img src="./asset/ieee1.png" class="w-20 h-10 " alt="">
+            </a>
+            <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block text-2xl font-bold "
+              href="./pages/Tracks.html" onclick="closeMobileNav()">Tracks</a>
+            <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block  text-2xl font-bold"
+              href="./pages/Sponsors.html" onclick="closeMobileNav()">Sponsors</a>
+            <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block text-2xl font-bold "
+              href="./pages/Venue.html" onclick="closeMobileNav()">Venue</a>
+            <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block  text-2xl font-bold" href="#"
+              onclick="closeMobileNav()">Admin</a>
+            <a class="cursor-pointer text-gray-100 hover:text-indigo-500 block  text-2xl font-bold" href="#"
+              onclick="closeMobileNav()">Registers</a>
+            <a class="cursor-pointer text-red-500 hover:text-red-500 block  text-2xl font-bold border border-red-500 text-center rounded-lg p-1"
+              onclick="closeMobileNav()">Close</a>
+
+          </div>
         </div>
-        <!-- Menu Icon for Mobile -->
-        <button id="mobileMenuButton" class="md:hidden text-white focus:outline-none mr-4 ">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+
+        <script>
+          const mobileNavModal = document.getElementById("mobileNavModal");
+
+          function toggleMobileNav() {
+            mobileNavModal.classList.toggle("hidden");
+          }
+
+          function closeMobileNav() {
+            mobileNavModal.classList.add("hidden");
+          }
+        </script>
+
+
+        <section id="Home"
+          class="m-auto flex w-full flex-col justify-evenly px-0 xl:flex-row-reverse xl:justify-between xl:px-6">
+          <!-- <div class="flex w-full items-center justify-start">
+            <img class="z-10 m-auto h-[280px] w-auto md:h-[360px] xl:h-[500px]" src="./asset/ieeebvm.png" alt="IEEE Event">
+        </div> -->
+
+          <!-- Countdown and Event Info -->
+          <div class=" mx-auto w-full  space-y-0 ">
+            <div class="flex flex-col items-center justify-center space-y-4 py-8">
+              <!-- Title Section -->
+              <div class="text-white text-center text-2xl font-semibold tracking-wide uppercase">
+                  Join the Ultimate Hackathon Experience
+              </div>
+          
+              <!-- Event Name Section -->
+              <div class="text-white text-center text-6xl font-extrabold tracking-tight md:text-7xl lg:text-8xl leading-tight">
+                  JIT Hack Xplore '24
+              </div>
+          
+              <!-- Event Duration Section -->
+              <div class="text-white text-center text-lg font-medium tracking-wide uppercase">
+                  14-Hour Hackathon Challenge
+              </div>
+          </div>
+          
+
+            <!-- Countdown Timer -->
+            <div class="text-white flex flex-row justify-center gap-1 text-4xl font-bold sm:text-7xl">
+              <div class="flex flex-col gap-2 text-center">
+                <span id="days">00</span><span class="text-sm lg:text-lg">Days</span>
+              </div>
+              <span>:</span>
+              <div class="flex flex-col gap-2 text-center">
+                <span id="hours">00</span><span class="text-sm lg:text-lg">Hours</span>
+              </div>
+              <span>:</span>
+              <div class="flex flex-col gap-2 text-center">
+                <span id="minutes">00</span><span class="text-sm lg:text-lg">Minutes</span>
+                
+              </div>
+              <span>:</span>
+              <div class="flex flex-col gap-2 text-center">
+                <span id="seconds">00</span><span class="text-sm lg:text-lg">Seconds</span>
+                
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div
+              class="absolute flex w-full flex-col flex-wrap items-center justify-center gap-4 pt-10 text-sm sm:text-base">
+              <!-- Contained Button with Hover Effect -->
+              <a href="https://forms.gle/bQkiCX9J6KDd8JNM7" target="_blank" rel="noopener noreferrer"
+                class="flex w-80 items-center justify-center gap-2 rounded-md bg-indigo-500 py-2.5 text-white hover:bg-indigo-600">
+                <span>Register Now</span>
+              </a>
+              <!-- Outlined Button -->
+              <!-- <a href="#" target="_blank" rel="noopener noreferrer"
+                class="flex w-80 items-center justify-center gap-2 rounded-md border-2 border-indigo-500 py-2.5 text-white hover:bg-indigo-500 hover:text-white">
+                <span>Register Now</span>
+              </a> -->
+            </div>
+          </div>
+        </section>
+
       </div>
-      <section id="Home" class="relative min-h-screen overflow-hidden ">
-        <div class="absolute inset-0 z-0">
-          <video autoplay muted loop class="w-full h-full object-cover">
-            <source src="./asset/new.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div class="absolute inset-0 bg-gray-900 opacity-0 transition-opacity duration-500 z-10"></div>
+
+
+      <section id="wiper" class="my-0 min-h-screen bg-gray-900 px-6 py-16 sm:px-20 sm:pt-14">
+        <div class="flex items-center justify-center ">
+          <span
+            class="text-4xl font-semibold sm:text-5xl bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 bg-clip-text text-transparent">
+            6th - 7th November '24
+          </span>
         </div>
-        <div class="logo">
-          <div class="logo1">
-            <img class="sblogo" src="./asset/Untitled_design__15_-removebg-preview.png" alt="sb logo">
-          </div>
-        </div>
-        <div class="relative z-20 flex flex-col items-center justify-center h-screen text-white text-center mt-24">
-          <div class="text-2xl font-semibold mb-4">
-            <h1 class="h1">JOIN THE IEEE HACKATHON 2024</h1>
-          </div>
-          <div class="text-lg font-semibold mb-6">
-            Join JIT HACK Xplore''24 ! 2-day hackathon brings together developers, designers, and innovators from all backgrounds. Whether you're a coding wizard or a tech enthusiast, this event offers the perfect environment to create, learn, and collaborate.
-          </div>
-          <div class="flex items-center justify-center space-x-1 text-4xl font-bold sm:text-7xl">
-            <div class="flex flex-col items-center">
-              <span>00</span>
-              <span class="text-sm lg:text-lg">Days</span>
+
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-slide--one">
             </div>
-            <span>:</span>
-            <div class="flex flex-col items-center">
-              <span>00</span>
-              <span class="text-sm lg:text-lg">Hours</span>
+            <div class="swiper-slide swiper-slide--two">
             </div>
-            <span>:</span>
-            <div class="flex flex-col items-center">
-              <span>00</span>
-              <span class="text-sm lg:text-lg">Minutes</span>
+
+            <div class="swiper-slide swiper-slide--three">
+
+            </div>
+
+            <div class="swiper-slide swiper-slide--four">
+
+            </div>
+
+            <div class="swiper-slide swiper-slide--five">
             </div>
           </div>
-          <div class="flex flex-col items-center gap-4 mt-8">
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              class="w-80 py-2.5 text-white rounded-md bg-indigo-500 hover:bg-indigo-600">
-              View Details
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              class="w-80 py-2.5 text-white rounded-md border-2 border-indigo-500 hover:bg-indigo-500 hover:text-white">
-              Register Now
-            </a>
-          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
         </div>
       </section>
+      <section id="Tracks" class="my-0 min-h-screen bg-gray-900 px-6 py-16 sm:px-20 sm:pt-14">
 
-
-
-      <section id="Tracks" class="my-0 min-h-full bg-gray-900 px-6 py-16 sm:px-20 sm:pt-14">
-
-        <div class="text-white  mb-20 text-center text-4xl font-semibold sm:text-5xl">Tracks</div>
+        <div class="text-white  mb-20 text-center text-4xl font-semibold sm:text-5xl">About Hackathon</div>
         <div class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
           <div
             class="z-10 flex flex-col items-center justify-center space-y-3 rounded-sm border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 hover:shadow-lg">
@@ -154,249 +247,107 @@
                 <path d="M12 12l4 2"></path>
                 <path d="M12 16.5l4 -2.5v-4l-4 -2.5l-4 2.5v4z"></path>
               </svg></div>
-            <h3 class="text-center text-xl font-semibold text-white">Experience</h3>
-            <p class="text-center text-gray-300">Participating in a hackathon offers an opportunity to work
-              collaboratively with like-minded individuals to develop creative solutions to real-world problems.</p>
+            <h3 class="text-center text-xl font-semibold text-white">Note</h3>
+            <span class="mt-1 text-white"><strong class="text-indigo-50">Registeration fee:</strong> ₹200</span>
+            <span class="text-lg text-white">Team Size: 1 - 4 Members</span>
+            <span class="text-lg text-white">Certificate for All Participants</span></p>
           </div>
+          
+          <div class="z-10 flex flex-col items-center justify-center space-y-3 rounded-sm border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 hover:shadow-lg">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-white">
+                <path d="M21 7l-9 9-5-5"></path>
+              </svg>
+            </div>
+            <h3 class="text-center text-xl font-semibold text-white">Exciting Cash Prizes</h3>
+            <ul class="text-center text-gray-300">
+              <li class="mt-1"><strong class="text-indigo-400">1st Place:</strong> ₹4,000</li>
+              <li class="mt-1"><strong class="text-indigo-400">2nd Place:</strong> ₹3,000</li>
+              <li class="mt-1"><strong class="text-indigo-400">3rd Place:</strong> ₹2,000</li>
+            </ul>
+            <p class="text-center text-gray-300">Showcase your skills, compete with the best, and win amazing cash prizes!</p>
+          </div>
+         
+        </div>
+      </section>
+
+      <section id="Themes" class="min-h-screen w-full bg-gray-900 px-0 py-16 md:px-10">
+        <div class="text-white  mb-20 text-center text-4xl font-semibold sm:text-5xl">Themes</div>
+        <div class="grid grid-cols-1 gap-10 px-4 md:grid-cols-2 lg:grid-cols-3">
           <div
-            class="z-10 flex flex-col items-center justify-center space-y-3 rounded-sm border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 hover:shadow-lg">
-            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-600"><svg
+            class="z-10 flex flex-col items-center justify-evenly space-y-4 rounded-lg border border-gray-700 bg-gray-900 p-8">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500"><svg
                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                class="h-8 w-8 text-white" data-darkreader-inline-stroke=""
-                style="--darkreader-inline-stroke: currentColor;">
-                <path d="M18.364 19.364a9 9 0 1 0 -12.728 0"></path>
-                <path d="M15.536 16.536a5 5 0 1 0 -7.072 0"></path>
-                <path d="M12 13m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-              </svg></div>
-            <h3 class="text-center text-xl font-semibold text-white">Networking</h3>
-            <p class="text-center text-gray-300">Networking is the act of creating and maintaining relationships with
-              individuals and groups in order to exchange information, ideas, and opportunities. </p>
-          </div>
-          <div
-            class="z-10 flex flex-col items-center justify-center space-y-3 rounded-sm border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 hover:shadow-lg">
-            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-600"><svg
-                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                class="h-8 w-8 text-white" data-darkreader-inline-stroke=""
-                style="--darkreader-inline-stroke: currentColor;">
-                <path d="M12 9m-6 0a6 6 0 1 0 12 0a6 6 0 1 0 -12 0"></path>
-                <path d="M12 15l3.4 5.89l1.598 -3.233l3.598 .232l-3.4 -5.889"></path>
-                <path d="M6.802 12l-3.4 5.89l3.598 -.233l1.598 3.232l3.4 -5.889"></path>
-              </svg></div>
-            <h3 class="text-center text-xl font-semibold text-white">Prizes</h3>
-            <p class="text-center text-gray-300">Hackathons offer a fantastic opportunity to win exciting prizes and showcase your talents. Win exciting cash prizes and outstanding performances can earn participants valuable recognition, opening doors to future collaborations and career growth.</p>
-          </div>
-          <div
-            class="z-10 flex flex-col items-center justify-center space-y-3 rounded-sm border-2 border-indigo-600 bg-indigo-800 bg-opacity-10 p-8 transition duration-200 hover:shadow-lg">
-            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-600"><svg
-                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                class="h-8 w-8 text-white" data-darkreader-inline-stroke=""
+                class="h-10 w-10 text-white" data-darkreader-inline-stroke=""
                 style="--darkreader-inline-stroke: currentColor;">
                 <path
-                  d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3">
+                  d="M7 7h10a2 2 0 0 1 2 2v1l1 1v3l-1 1v3a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-3l-1 -1v-3l1 -1v-1a2 2 0 0 1 2 -2z">
                 </path>
-                <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
-                <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                <path d="M10 16h4"></path>
+                <circle cx="8.5" cy="11.5" r=".5" fill="currentColor"></circle>
+                <circle cx="15.5" cy="11.5" r=".5" fill="currentColor"></circle>
+                <path d="M9 7l-1 -4"></path>
+                <path d="M15 7l1 -4"></path>
               </svg></div>
-            <h3 class="text-center text-xl font-semibold text-white">Fun</h3>
-            <p class="text-center text-gray-300">Hackathons are a great way to meet new people, learn new skills, and
-              have fun. You can also win prizes for your work.</p>
+            <div class="text-center text-2xl font-semibold text-white">AIML & IOT</div>
+            <div class="text-center text-gray-300">Create innovative applications that leverage machine learning
+              algorithms to solve complex problems, such as predictive analytics, natural language processing and
+              computer vision.</div>
+          </div>
+     
+          <div
+            class="z-10 flex flex-col items-center justify-evenly space-y-4 rounded-lg border border-gray-700 bg-gray-900 p-8">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="h-10 w-10 text-white" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path d="M22 12h-6"></path>
+                <path d="M2 12h6"></path>
+                <path d="M8 7l8 5l-8 5z"></path>
+                <path d="M14 7h2v10h2"></path>
+              </svg></div>
+            <div class="text-center text-2xl font-semibold text-white">I-O-T</div>
+            <div class="text-center text-gray-300">Build connected devices and systems that collect and analyze data in
+              real-time, creating innovative solutions that improve efficiency and productivity across industries.</div>
+          </div>
+         
+        
+          <div
+            class="z-10 flex flex-col items-center justify-evenly space-y-4 rounded-lg border border-gray-700 bg-gray-900 p-8">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="h-10 w-10 text-white" data-darkreader-inline-stroke=""
+                style="--darkreader-inline-stroke: currentColor;">
+                <path
+                  d="M12 3a9 9 0 0 1 3.618 17.243l-2.193 -5.602a3 3 0 1 0 -2.849 0l-2.193 5.603a9 9 0 0 1 3.617 -17.244z">
+                </path>
+              </svg></div>
+            <div class="text-center text-2xl font-semibold text-white">OPEN INNOVATION</div>
+            <div class="text-center text-gray-300">Envision and engineer pioneering hardware or software solutions,
+              poised to effectuate a benevolent and lasting influence on the global stage.</div>
           </div>
         </div>
       </section>
-      <section id="wiper" class="relative my-0 min-h-screen bg-gray-900  px-6 py-16 sm:px-20 sm:pt-14">
-        <div class="flex items-center justify-center ">
-          <span
-            class="text-4xl font-semibold sm:text-5xl bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 bg-clip-text text-transparent" style="text-align: center;">
-            How To Participate in JIT HACK
-          </span>
-        </div>
-
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide swiper-slide--one">
-            </div>
-            <!-- <div class="swiper-slide swiper-slide--two">
-            </div> -->
-
-            <div class="swiper-slide swiper-slide--three">
-
-            </div>
-
-            <div class="swiper-slide swiper-slide--four">
-
-            </div>
-
-            <div class="swiper-slide swiper-slide--five">
-            </div>
-
-            <div class="swiper-slide swiper-slide--six">
-            </div>
-          </div>
-          <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
-        </div>
-      </section>
-      <section id="Themes" class="min-h-full w-full bg-gray-900 px-0 py-16 md:px-10">
-        <div class="text-white mb-20 text-center text-4xl font-semibold sm:text-5xl">Themes</div>
-        <div class="grid grid-cols-1 gap-10 px-4 md:grid-cols-2 lg:grid-cols-3">
-          <!-- AI and ML Card -->
-          <div
-            class="z-10 flex flex-col items-center justify-evenly space-y-3 rounded-lg border border-gray-700 bg-gray-900 p-4">
-            <!-- Speaker's image -->
-            <div class="h-full w-full rounded-xl overflow-hidden">
-              <img
-                src="asset\ai.png"
-                alt="Elon Musk" class="h-full w-full object-cover" />
-            </div>
-            <div class="text-center text-xl font-semibold text-white">AI AND ML</div>
-            <div class="text-center text-md font-semibold text-gray-400">Software </div>
-
-            <button
-              class="btn-open-modal-ai-ml px-2 py-1 text-white rounded-md border-2 border-indigo-500 hover:bg-indigo-500 hover:text-white">Learn
-              More</button>
-          </div>
-
-
-          <!-- Game Development Card -->
-          <div
-            class="z-10 flex flex-col items-center justify-evenly space-y-3 rounded-lg border border-gray-700 bg-gray-900 p-4">
-            <!-- Speaker's image -->
-            <div class="h-full w-full rounded-xl overflow-hidden">
-              <img
-                src="asset\w.jpeg"
-                alt="Elon Musk" class="h-full w-full object-cover" />
-            </div>
-            <div class="text-center text-xl font-semibold text-white"> Web & App Development
-            </div>
-            <div class="text-center text-md font-semibold text-gray-400">Software </div>
-
-            <button
-              class="btn-open-modal-game-dev  py-1 px-2 text-white rounded-md border-2 border-indigo-500 hover:bg-indigo-500 hover:text-white ">Learn
-              More</button>
-          </div>
-
-          <!-- IoT Card -->
-          <div
-            class="z-10 flex flex-col items-center justify-evenly space-y-3 rounded-lg border border-gray-700 bg-gray-900 p-4 ">
-            <!-- Speaker's image -->
-            <div class="h-full w-full rounded-xl overflow-hidden">
-              <img
-                src="asset\ed.jpg"
-                alt="Elon Musk" class="h-full w-full object-cover" />
-            </div>
-            <div class="text-center text-xl font-semibold text-white">Educational Technology</div>
-            <div class="text-center text-md font-semibold text-gray-400">Software </div>
-
-
-            <button
-              class="btn-open-modal-iot  py-1 px-2 text-white rounded-md border-2 border-indigo-500 hover:bg-indigo-500 hover:text-white ">Learn
-              More</button>
-          </div>
-
-          <div
-            class="z-10 flex flex-col items-center justify-evenly space-y-3 rounded-lg border border-gray-700 bg-gray-900 p-4 ">
-            <!-- Speaker's image -->
-            <div class="h-full w-full rounded-xl overflow-hidden">
-              <img
-                src="asset\ht.jpg"
-                alt="Elon Musk" class="h-full w-full object-cover" />
-            </div>
-            <div class="text-center text-xl font-semibold text-white">Healthcare Technology</div>
-            <div class="text-center text-md font-semibold text-gray-400">Software </div>
-
-
-            <button
-              class="btn-open-modal-iot  py-1 px-2 text-white rounded-md border-2 border-indigo-500 hover:bg-indigo-500 hover:text-white ">Learn
-              More</button>
-          </div>
-
-
-        </div>
-      </section>
-
-      <div class="modal-overlay-ai-ml modal-overlay">
-        <div
-          class="modal  flex flex-col items-center justify-center space-y-3 rounded-sm border-2 border-indigo-600 bg-indigo-800 p-8 transition duration-200 hover:shadow-lg min-h-[50%] mx-12">
-          <div class="modal-content items-center justify-center flex flex-col">
-            <div class="h-[30%] w-[30%] rounded-xl overflow-hidden">
-              <img
-                src="asset\ai.png"
-                alt="Elon Musk" class="h-full w-full object-cover" />
-            </div>
-            <div class="text-center text-xl font-semibold text-white">Explore the power of data to create smart solutions that can learn and evolve. AI and ML are driving innovations across multiple industries, from healthcare to finance</div>
-            <div class="text-center text-md font-semibold text-gray-400">Skills to Leverage: <br>
-              Python, TensorFlow, PyTorch, data science, and NLP </div>
-            <button
-              class="btn-close-modal text-red-600 text-2xl border border-red-400 px-3 py-2 rounded-full hover:bg-red-700  hover:text-white">X</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Game Development Modal -->
-      <div class="modal-overlay-game-dev modal-overlay">
-        <div
-          class="modal  flex flex-col items-center justify-center space-y-3 rounded-sm border-2 border-indigo-600 bg-indigo-800 p-8 transition duration-200 hover:shadow-lg min-h-[50%] mx-12 ">
-          <div class="modal-content items-center justify-center flex flex-col">
-            <div class="h-[30%] w-[30%] rounded-xl overflow-hidden">
-              <img
-                src="asset\block.png"
-                alt="Elon Musk" class="h-full w-full object-cover" />
-            </div>
-            <div class="text-center text-xl font-semibold text-white">Delve into the decentralized world where security, transparency, and autonomy reign. Blockchain technology enables new forms of applications that minimize trust barriers.</div>
-            <div class="text-center text-md font-semibold text-gray-400">Skills to Leverage: <br>
-              Smart Contracts, Blockchain Platforms, Hyperledger, and knowledge of cryptography </div>
-
-            <button
-              class="btn-close-modal text-red-600 text-2xl border border-red-400 px-3 py-2 rounded-full hover:bg-red-700  hover:text-white">X</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- IoT Modal -->
-      <div class="modal-overlay-iot modal-overlay">
-        <div
-          class="modal  flex flex-col items-center justify-center space-y-3 rounded-sm border-2 border-indigo-600 bg-indigo-800 p-8 transition duration-200 hover:shadow-lg min-h-[50%] mx-12">
-          <div class="modal-content items-center justify-center flex flex-col">
-            <div class="h-[30%] w-[30%] rounded-xl overflow-hidden">
-              <img
-                src="asset\nature.png"
-                alt="Elon Musk" class="h-full w-full object-cover" />
-            </div>
-            <div class="text-center text-xl font-semibold text-white">Use technology to address real-world issues and promote a better future. Projects in this theme focus on environmental conservation, health, education, and community welfare</div>
-            <div class="text-center text-md font-semibold text-gray-400">Skills to Leverage: <br>
-              Mobile development, AI/ML, web development, data visualization, and environmental science </div>
-            <button
-              class="btn-close-modal text-red-600 text-2xl border border-red-400 px-3 py-2 rounded-full hover:bg-red-700  hover:text-white">X</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- <section id="Sponsors" class="min-h-full bg-gray-900 px-2 pb-4 pt-5 sm:pt-10">
+      <section id="Sponsors" class="min-h-screen bg-gray-900 px-2 pb-4 pt-5 sm:pt-10">
 
         <h1 class="text-white  flex justify-center text-4xl font-bold"> SPONSORS</h1>
         <div class="flex flex-wrap justify-center gap-10 py-10">
           <div class="z-10 flex flex-col items-center space-y-5 rounded py-5"><a href="https://gen.xyz/"><img
                 src="./asset/ieee1.png" loading="lazy" alt="XYZ LOGO"
                 class="h-auto w-72 rounded-2xl bg-gray-900 object-contain p-3 sm:h-28"></a></div>
-          <div class="z-10 flex flex-col items-center space-y-5 rounded py-5"><a href="https://www.taskade.com/"><img
-                src="./asset/ieee1.png" loading="lazy" alt="TASKADE LOGO"
-                class="h-auto w-72 rounded-2xl bg-gray-900 object-contain p-3 sm:h-28"></a></div>
-          <div class="z-10 flex flex-col items-center space-y-5 rounded py-5"><a href="https://www.avairsense.com/"><img
-                src="./asset/ieee1.png" loading="lazy" alt="avairsense LOGO"
-                class="h-auto w-72 rounded-2xl bg-gray-900 object-contain p-3 sm:h-28"></a></div>
-          <div class="z-10 flex flex-col items-center space-y-5 rounded py-5"><a href="https://www.wolfram.com/"><img
-                src="./asset/ieee1.png" loading="lazy" alt="WOLFRAM LOGO"
-                class="h-auto w-72 rounded-2xl bg-gray-900 object-contain p-3 sm:h-28"></a></div>
+   
+       
+        
           <div class="z-10 flex flex-col items-center space-y-5 rounded py-5"><a href="https://www.codechef.com/"><img
                 src="./asset/ieee1.png" loading="lazy" alt="CODECHEF LOGO"
                 class="h-auto w-72 rounded-2xl bg-gray-900 object-contain p-3 sm:h-28"></a></div>
         </div>
 
-      </section> -->
-      <section id="Organizers" class="min-h-full rounded-lg bg-gray-900 px-2 pb-4  text-lg sm:px-10 ">
+      </section>
+      <section id="Organizers" class="min-h-screen rounded-lg bg-gray-900 px-2 pb-4  text-lg sm:px-10 ">
         <div class="text-white  mb-12 flex justify-center text-4xl font-semibold">Organizing Admin</div>
         <div class="flex flex-wrap justify-center gap-4 sm:gap-10">
           <div
@@ -458,86 +409,86 @@
 
       </section>
 
-
-      <section id="ContactUs" class="bg-black py-10">
-        <div class="text-white text-center text-4xl font-semibold sm:text-5xl my-10">Contact Us</div>
-        <div class="z-100 flex flex-col md:flex-row justify-between mx-6 sm:mx-10 md:mx-24">
-          <div class=" z-20 w-full md:w-1/2 bg-opacity-90 bg-gray-900 rounded-xl px-4 py-4 mt-6 md:mt-0">
-            <!-- <div class="mb-6">
-              <label for="fullName" class="block text-sm text-gray-600 font-bold uppercase mb-1">Full Name</label>
-              <input type="text" id="fullName"
-                class="w-full bg-gray-300 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                placeholder="John Doe">
+      <section id="ContactUs" class="min-h-screen bg-gray-900 p-10">
+        <div class="text-white my-20 text-center text-4xl font-semibold sm:text-5xl">Contact Us</div>
+        <div class="flex flex-row justify-between items-center ">
+          
+        <div>
+        <div class="my-8 flex flex-col items-center justify-evenly space-y-10">
+            <div class="flex items-center justify-center space-x-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    class="h-20 w-20 rounded-full bg-indigo-600 p-4 text-white sm:h-24 sm:w-24">
+                    <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+                    <path d="M3 7l9 6l9 -6"></path>
+                </svg>
+                <div class="indigo z-10 text-center text-xl text-gray-200 antialiased sm:text-2xl">
+                    <a href="mailto:help@hacksrm.tech">IEEE Event</a>
+                </div>
             </div>
-            <div class="mt-8">
-              <span class="uppercase text-sm text-gray-600 font-bold">Email</span>
-              <input
-                class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="text">
-            </div>
-            <div class="mt-8">
-              <span class="uppercase text-sm text-gray-600 font-bold">Message</span>
-              <textarea
-                class="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
-            </div> -->
-
-            <!-- <div class="mt-8">
-              <button
-                class="w-full bg-indigo-500 text-gray-100 p-3 rounded-lg font-bold uppercase tracking-wide focus:outline-none focus:shadow-outline">
-                Send Message
-              </button>
-            </div>
-          </div> -->
-          <div class="flex flex-col items-center justify-center mt-6 md:mt-0">
-            <div class="flex flex-col items-center justify-center">
-
-
-              <div class="flex items-center justify-center space-x-6">
-                <div class="z-10 flex items-center justify-center rounded-full bg-gray-900 bg-opacity-70 p-2"><a
-                    href="https://www.instagram.com/jit_ieee_sb?igsh=MTlkeXN4bWZtbXowcQ==" target="_blank" rel="noopener noreferrer"
-                    class="text-gray-200 hover:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="50"
-                      height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round" class="text-fuchsia-500"
-                      data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: currentColor;">
-                      <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
-                      <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-                      <path d="M16.5 7.5l0 .01"></path>
-                    </svg></a></div>
-                <!-- <div class="z-10 flex items-center justify-center rounded-full bg-gray-900 bg-opacity-70 p-2"><a
-                    href="https://twitter.com/Mugesh_Rao_Dev" target="_blank" rel="noopener noreferrer"
-                    class="text-gray-200 hover:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="50"
-                      height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"
-                      data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: currentColor;">
-                      <path
-                        d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z">
-                      </path>
-                    </svg></a></div> -->
-                <div class="z-10 flex items-center justify-center rounded-full bg-gray-900 bg-opacity-70 p-2"><a
-                    href="https://www.linkedin.com/in/jit-ieee-student-branch-01b6111b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"
-                    class="text-gray-200 hover:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="50"
-                      height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"
-                      data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: currentColor;">
-                      <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
-                      <path d="M8 11l0 5"></path>
-                      <path d="M8 8l0 .01"></path>
-                      <path d="M12 16l0 -5"></path>
-                      <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
-                    </svg></a></div>
-              </div>
-
-
-              <div class="flex flex-col items-center justify-center space-y-6 pt-8 text-white">
-                <h5 class="text-center text-2xl font-semibold text-gray-200">In Collaboration With</h5><img
-                  src="./asset/ieee1.png" alt="IEEE" class="z-10 h-24 rounded-md p-4">
-              </div>
-
-            </div>
-          </div>
         </div>
-      </section>
-
+        
+        <div class="flex items-center justify-center space-x-6">
+            <div class="z-10 flex items-center justify-center rounded-full bg-gray-900 bg-opacity-70 p-2">
+                <a href="https://www.instagram.com/mugeshraoo/" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" class="text-fuchsia-500">
+                        <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                        <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                        <path d="M16.5 7.5l0 .01"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="z-10 flex items-center justify-center rounded-full bg-gray-900 bg-opacity-70 p-2">
+                <a href="https://twitter.com/Mugesh_Rao_Dev" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" class="text-blue-400">
+                        <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="z-10 flex items-center justify-center rounded-full bg-gray-900 bg-opacity-70 p-2">
+                <a href="https://www.linkedin.com/in/mugesh-rao-2003/" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" class="text-blue-600">
+                        <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                        <path d="M8 11l0 5"></path>
+                        <path d="M8 8l0 .01"></path>
+                        <path d="M12 16l0 -5"></path>
+                        <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+      
+    </div>
+    <div class="flex flex-col items-center justify-center space-y-6 pt-8 text-white">
+      <h5 class="text-center text-2xl font-semibold text-gray-200">In Collaboration With</h5>
+      <img src="./asset/ieee1.png" alt="IEEE" class="z-10 h-24 rounded-md p-4">
+  </div>
+        <!-- Coordinators Section -->
+        <div class="flex flex-col items-center justify-center space-y-6 pt-8 text-white">
+            <h5 class="text-center text-2xl font-semibold text-gray-200">Coordinators</h5>
+            <div class="text-center text-lg">
+                <p>Ms. M. Mercy - Asst. Prof - ECE - <a href="https://wa.me/+91XXXXXXXXXX" class="text-indigo-400 hover:underline">Contact</a></p>
+                
+            </div>
+            <div class="text-center text-lg">
+                <p>Kamalesh - III Year IT - <a href="https://wa.me/+91XXXXXXXXXX" class="text-indigo-400 hover:underline">Contact</a></p>
+            </div>
+            <div class="text-center text-lg">
+                <p>Mugesh Rao - <a href="https://wa.me/+91XXXXXXXXXX" class="text-indigo-400 hover:underline">Contact</a></p>
+            </div>
+        </div>
+    
+       
+      </div>
+    </section>
+    
     </div>
   </div>
 </body>
